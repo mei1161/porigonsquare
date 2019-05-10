@@ -208,9 +208,11 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
     VertexPositionColor v0( Vector3( -0.5F, 0.5F, 0.0F ), Vector4( 1.0F, 0.0F, 0.0F, 1.0F ) );
     VertexPositionColor v1( Vector3( 0.5F, -0.5F, 0.0F ), Vector4( 0.0F, 1.0F, 0.0F, 1.0F ) );
     VertexPositionColor v2( Vector3( -0.5F, -0.5F, 0.0F ), Vector4( 0.0F, 0.0F, 1.0F, 1.0F ) );
-
+    VertexPositionColor v3( Vector3( -0.5F, 0.5F, 0.0F ), Vector4( 1.0F, 0.0F, 0.0F, 1.0F ) );
+    VertexPositionColor v4( Vector3( 0.5F, 0.5F, 0.0F ), Vector4( 0.0F, 1.0F, 1.0F, 1.0F ) );
+    VertexPositionColor v5( Vector3( 0.5F, -0.5F, 0.0F ), Vector4( 0.0F, 1.0F, 0.0F, 1.0F ) );
     //配列の作成
-    VertexPositionColor p[] = { v0,v1,v2 };
+    VertexPositionColor p[] = { v0,v1,v2,v3,v4,v5 };
 
 
     // ウィンドウの表示
@@ -260,7 +262,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
                 // 第一引数：三角形の描画方法
                 // 第二引数：描画する頂点配列の先頭ポインタ
                 // 第三引数：頂点数
-                primitive.Draw( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, p, 3 );
+                primitive.Draw( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, p, 6 );
 
                 //描画終了
                 primitive.End();
